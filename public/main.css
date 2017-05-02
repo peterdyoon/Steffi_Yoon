@@ -1,0 +1,42 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4em;
+}
+
+div {
+    text-align: center;
+}
+
+img {
+    width: 50%;
+}
+
+ul {
+    list-style: none;
+    list-style-image: none;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    margin: 0 20px 0 20px;
+}
+p{
+    text-align:center;
+    font-weight:bold;
+}
+h6{
+    text-align:center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: gainsboro;
+}

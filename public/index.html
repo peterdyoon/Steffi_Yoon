@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>steffi yoon.</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <!--  fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app = "MyApp">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+      <div class="col-xs-3"></div>
+       <div class = "col-xs-6" ng-controller = "myController">
+            <br>
+            <br>
+            <br>
+            <h1>STEFFI YOON</h1>
+            <nav>
+                <ul>
+                    <li><a href="">NEW BLOG</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">IMAGES</a></li>
+                </ul>
+            </nav>
+            <br>
+            <br>
+            <br>
+            <form>
+               <div class="form-group">
+                   <label for="">Author:</label>
+                   <input type="text" value="Steffi Yoon" ng-model = "newblog.author">
+               </div>
+               <div class="form-group">
+                   <label for="">Date:</label>
+                   <input type="text" ng-model = "newblog.date">
+               </div>
+               <div class="form-group">
+                   <label for="">Time:</label>
+                   <input type="text" ng-model = "newblog.time">
+               </div>
+                <div class="form-group">
+                   <p>Blog:</p>
+                    <textarea class = "form-control" name="" id="" rows="10" ng-model = "newblog.story"></textarea>
+                </div>
+                <div class="form-group">
+                    <p>Picture:</p>
+                    <input type="file" ng-model = "newblog.picture">
+                </div>
+                <button class = "btn btn-default" ng-click = "blogdata.$add(newblog); newblog = {}">Submit</button>
+            </form>
+            <div ng-repeat = "post in blogdata">
+                <p>{{post.story}}</p>
+                <h6>{{post.date}}</h6>
+                <h6>{{post.time}}</h6>
+                <h6>{{post.author}}</h6>
+                <div><img src="japaneserestaurant.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <script src="../functions/app.js" type="text/javascript"></script>
+    </body>
+
+</html>
